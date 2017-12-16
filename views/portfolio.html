@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>AHM Portfolio</title>
+        <meta name="description" content="Adrienne Helms Major Personal Website">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../css/main.css">
+
+        <script src="../js/main.js"></script>
+
+        <!--Nunito Sans: extra-light 200, light 300, regular 400, semi-bold 600, bold 700, extra-bold 800, black 900-->
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+
+        <!--Flexslider 2.6.4 - use for development (https://cdnjs.com/libraries/flexslider)-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.js"></script>
+
+        <!--Flexslider 2.6.4 min - use for production (https://cdnjs.com/libraries/flexslider)-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css" />-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.min.js"></script>-->
+
+        <script>
+            $(function () {
+                $('#fitnessZoneSlider').flexslider({
+                    //Default settings
+                    animation: "slide",
+                    animationLoop: true,
+                    smoothHeight: true,
+                    startAt: 0,
+                    slideshow: true,
+                    slideshowSpeed: 3000,
+                    animationSpeed: 1000,
+                    initDelay: 0,
+                    //Usability features
+                    useCSS: true,
+                    //Primary controls
+                    controlNav: false,
+                    directionNav: false,
+                    //Special properties
+                    controlsContainer: '.flex-control-nav-container',
+                    //Carousel options
+                    itemWidth: 250
+                });
+                $('#pingoraIntranetSlider').flexslider({
+                    //Default settings
+                    animation: "slide",
+                    animationLoop: true,
+                    smoothHeight: true,
+                    startAt: 0,
+                    slideshow: true,
+                    slideshowSpeed: 3000,
+                    animationSpeed: 1000,
+                    initDelay: 0,
+                    //Usability features
+                    useCSS: true,
+                    //Primary controls
+                    controlNav: false,
+                    directionNav: false,
+                    //Special properties
+                    controlsContainer: '.flex-control-nav-container',
+                    //Carousel options
+                    itemWidth: 350
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser.
+            Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and
+            security.
+        </p>
+        <![endif]-->
+
+        <header id="pageHeader">
+            <nav id="headerContainer">
+                <span id="headerName">Adrienne Helms Major</span>
+                <a class="push" href="index.html">Home</a>
+                <a href="funfacts.html">Fun Facts</a>
+                <a class="active" href="portfolio.html">Portfolio</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main class="pageBody">
+
+            <section id="portfolioAuPic">
+                <div class="containerBox">
+                    <div class="quote">If you build it, he will come.</div>
+                </div>
+            </section>
+
+            <hr id="fitnessZoneAnchor">
+
+            <section id="fitnessZone">
+                <h2>Fitness Zone</h2>
+                <h4>Android Mobile Application</h4>
+                <div id="fitnessZoneGroup">
+                    <!--Replace flexslider with iframe for app demo-->
+                    <div id="fitnessZoneSlider" class="flexslider">
+                        <ul class="slides">
+                            <li><img src="../img/fz_01_launch.png"/></li>
+                            <li><img src="../img/fz_02_home.png"/></li>
+                            <li><img src="../img/fz_03_location1.png"/></li>
+                            <li><img src="../img/fz_03_location2.png"/></li>
+                            <li><img src="../img/fz_04_healthbenefits.png"/></li>
+                            <li><img src="../img/fz_05_equipmentexerciselist.png"/></li>
+                            <li><img src="../img/fz_06_equipmentexercisedetail.png"/></li>
+                            <li><img src="../img/fz_07_myworkout.png"/></li>
+                            <li><img src="../img/fz_08_workoutcardio.png"/></li>
+                            <li><img src="../img/fz_09_workoutarm.png"/></li>
+                            <li><img src="../img/fz_10_workoutleg.png"/></li>
+                            <li><img src="../img/fz_11_fitnessjournal1.png"/></li>
+                            <li><img src="../img/fz_11_fitnessjournal2.png"/></li>
+                            <li><img src="../img/fz_12_workouttracker1.png"/></li>
+                            <li><img src="../img/fz_12_workouttracker2.png"/></li>
+                            <li><img src="../img/fz_12_workouttracker3.png"/></li>
+                            <li><img src="../img/fz_13_about.png"/></li>
+                        </ul>
+                    </div>
+                    <div id="fitnessZoneText">
+                        <div class="appDescription">
+                            I developed the Fitness Zone (FZ) mobile application in 16 weeks as part of my software
+                            engineering graduate degree completion requirements. The app is intended for neighborhood
+                            users of the Trust for Public Land (TPL) Fitness Zones. Key achievements include:
+                        </div>
+                        <ul id="keyAchievements">
+                            <li>
+                                Taught myself Android programming and Google's material design principles, while
+                                developing this app.
+                            </li>
+                            <li>
+                                Converted mockups into executable code.
+                            </li>
+                            <li>
+                                Worked cross-functionally with stakeholders, including TPL representatives, Regis
+                                faculty, and Regis physical therapy students.
+                            </li>
+                        </ul>
+                        <div class="toolsUsed">
+                            Tools used:
+                            <ul>
+                                <li>Java</li>
+                                <li>XML</li>
+                                <li>Android Studio</li>
+                                <li>Gson</li>
+                                <li>JSON</li>
+                                <li>Google Maps API</li>
+                                <li>GitHub</li>
+                                <!--<li>Use Cases</li>-->
+                                <!--<li>Use Case Diagram</li>-->
+                                <!--<li>Class Diagram</li>-->
+                                <!--<li>Sequence Diagram</li>-->
+                            </ul>
+                        </div>
+                        <!--<span>Click on the yellow highlighted areas for an interactive demo.</span>-->
+                        <div class="projectGithubLink">
+                            <a href="https://github.com/adrienneh99/FitnessZone" target="_blank">
+                                https://github.com/adrienneh99/FitnessZone</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr id="pingoraIntranetAnchor">
+
+            <section id="pingoraIntranet">
+                <h2>Pingora Intranet</h2>
+                <h4>Fictional Website</h4>
+
+                <div id="pingoraIntranetGroup">
+
+                    <div id="pingoraIntranetSlider" class="flexslider">
+                        <ul class="slides">
+                            <li><img src="../img/pami_01_home.png"/></li>
+                            <li><img src="../img/pami_02_about.png"/></li>
+                            <li><img src="../img/pami_03_login.png"/></li>
+                            <li><img src="../img/pami_04_createacct.png"/></li>
+                            <li><img src="../img/pami_05_team.png"/></li>
+                            <li><img src="../img/pami_06_contact.png"/></li>
+                        </ul>
+                    </div>
+
+                    <div id="pingoraIntranetText">
+                        <div class="appDescription">
+                            Pingora Intranet is an internal website that I developed incrementally over two courses.
+                            In the first course, I designed and developed the website, and structured and styled its
+                            content. In the second course, I modified the web application using JavaScript frameworks
+                            and incorporated dynamic web page behavior.
+                        </div>
+                        <div class="toolsUsed">
+                            Tools used:
+                            <ul>
+                                <li>CSS</li>
+                                <li>HTML</li>
+                                <li>JavaScript</li>
+                                <li>NetBeans</li>
+                                <li>MySQL</li>
+                                <li>Jasmine</li>
+                                <li>AJAX</li>
+                                <li>AngularJS</li>
+                                <li>Balsamiq</li>
+                                <li>Bootstrap</li>
+                                <li>FlexSlider</li>
+                                <li>Google Maps API</li>
+                                <li>Google Places API</li>
+                                <li>jQuery</li>
+                                <li>JSON</li>
+                                <li>PHP</li>
+                                <!--<li>Routing</li>-->
+                                <!--<li>Event Handlers</li>-->
+                                <!--<li>REST Services</li>-->
+                            </ul>
+                        </div>
+                        <div class="projectGithubLink">
+                            <a href="https://github.com/adrienneh99/PingoraIntranet" target="_blank">
+                                https://github.com/adrienneh99/PingoraIntranet</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr id="travelManagerAnchor">
+
+            <section id="travelManager">
+                <h2>Travel Manager</h2>
+                <h4>Desktop & Web Application</h4>
+
+                <div id="travelManagerGroup">
+
+                    <div id="travelManagerText">
+                        <div class="appDescription">
+                            Travel Manager is a fictional travel profile manager that I developed incrementally over
+                            three courses using layered software architecture. During the first two courses, I
+                            documented and developed Travel Manager as a desktop application. Then, I converted the
+                            desktop application into a web application during the third course.
+                        </div>
+                        <div class="toolsUsed">
+                            Tools used:
+                            <ul>
+                                <li>Java</li>
+                                <li>HTML</li>
+                                <li>XML</li>
+                                <li>Java SE</li>
+                                <li>Eclipse</li>
+                                <li>NetBeans</li>
+                                <li>Apache Ant</li>
+                                <li>Connector/J JDBC driver</li>
+                                <li>Hibernate</li>
+                                <li>MySQL</li>
+                                <li>Apache Tomcat</li>
+                                <li>JavaServer Faces (JSF)</li>
+                                <li>Spring Framework</li>
+                                <li>Sysdeo Tomcat plugin</li>
+                                <li>JUnit</li>
+                                <li>Log4j</li>
+                            </ul>
+                        </div>
+                        <div class="projectGithubLink">
+                            <a href="https://github.com/adrienneh99/TravelManager" target="_blank">
+                                https://github.com/adrienneh99/TravelManager</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <a href="https://www.linkedin.com/in/adriennehelmsmajor/" target="_blank">
+                <img src="../img/ic_linkedin_tm_white.png">
+            </a>
+            <a href="https://github.com/adrienneh99" target="_blank">
+                <img src="../img/ic_github_mark.png">
+            </a>
+            <a href="contact.html#contactForm" target="_blank">
+                <img src="../img/ic_email_white.png">
+            </a>
+        </footer>
+
+    </body>
+</html>
+

@@ -9,7 +9,7 @@
 
         <link rel="stylesheet" href="../css/main.css">
 
-        <script src="../js/main.js"></script>
+        <script src="../js/main.js" defer></script>
 
         <!--Nunito Sans: extra-light 200, light 300, regular 400, semi-bold 600, bold 700, extra-bold 800, black 900-->
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
@@ -46,34 +46,29 @@
 
             <section id="contactGroup">
                 <h4>
-                    I'm dedicated to make a difference and would love to be part of your team.
-                    <br/>
-                    Send me a message and let me know how I can help!
+                    Thanks for stopping by! I'd love to hear from you!
                 </h4>
+                <!--<span>-->
+                    <!--Please get in touch via this email form or connect with me on LinkedIn.-->
+                <!--</span>-->
                 <form id="contactForm" action="" method="post">
                     <div>
-                        <label for="formName">Name</label>
-                        <input type="text" id="formName" name="fullname">
+                        <label for="formName" id="firstLabel">Name *</label>
+                        <input type="text" id="formName" name="name" required>
                     </div>
                     <div>
-                        <label for="formEmail">Email</label>
-                        <input type="email" id="formEmail" name="email">
+                        <label for="formEmail">Email *</label>
+                        <input type="email" id="formEmail" name="email" required value="" title="The domain portion of your email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$">
                     </div>
                     <div>
-                        <label for="formSubject">Subject</label>
-                        <input type="text" id="formSubject" name="subject">
-                    </div>
-                    <div>
-                        <label for="formMessage">Message</label>
-                        <textarea id="formMessage" name="message"></textarea>
+                        <label for="formMessage">Message *</label>
+                        <textarea id="formMessage" name="message" minlength="15" required></textarea>
                     </div>
                     <div>
                         <button id="formButton" type="submit">Send</button>
                     </div>
                 </form>
             </section>
-
-
 
         </main>
 

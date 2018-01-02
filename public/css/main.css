@@ -486,6 +486,7 @@ footer a:hover {
 
 #enfjButton:hover {
     background-color: #1c5f69;
+    border: none;
     color: #ffffff;
     transition-duration: 0.5s;
 }
@@ -814,10 +815,8 @@ footer a:hover {
     background-size: cover;
     background-attachment: fixed;
     display: flex;
-    /*horizontal alignment*/
-    justify-content: center;
-    /*vertical alignment*/
-    align-items: flex-start;
+    justify-content: center; /*horizontal alignment*/
+    align-items: flex-start; /*vertical alignment*/
 }
 
 #contactGroup {
@@ -828,67 +827,100 @@ footer a:hover {
 
 #contactGroup > h4 {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-transform: none;
 }
+
+
+/*===== Style of initial form =====*/
 
 #contactForm {
     width: 500px;
     margin: 0 auto;
-    /*padding: 1em;*/
-    /*border: 1px solid #1c5f69;*/
-    /*border-radius: 1em;*/
 }
 
 #contactForm > div {
-    margin-top: 20px;
     display: flex;
-    flex-direction: row;
-    /*horizontal alignment*/
-    justify-content: center;
-    /*vertical alignment*/
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start; /*vertical alignment*/
+    align-items: flex-start; /*horizontal alignment*/
 }
 
 label {
-    width: 100px;
-    /*text-align: right;*/
-}
-
-#formButton {
-    width: 100px;
-    height: 30px;
-    margin-left: auto;
-    background-color: #ffffff;
-    font-size: 16px;
-    font-weight: 400;
-    color: #1c5f69;
+    width: 500px;
+    height: 20px;
     box-sizing: border-box;
-    border: 1px solid #1c5f69;
+    margin-top: 15px;
+    font-size: 13px;
+    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-input,
-textarea {
-    width: 400px;
+#firstLabel {
+    margin-top: 0;
+}
+
+input {
+    width: 500px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 5px 10px;
     font-family: 'Nunito Sans', Verdana, sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #1c5f69;
-    box-sizing: border-box;
-    border: 1px solid #1c5f69;
-    /*background-color: #efefef;*/
-}
-
-input:focus,
-textarea:focus,
-#formButton:focus {
-    border-color: #1c5f69;
-    outline: none;
-    box-shadow: 0 0 10px #b2d4da;
+    background-color: #efefef;
+    border: none;
 }
 
 textarea {
+    width: 500px;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-family: 'Nunito Sans', Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1c5f69;
+    background-color: #efefef;
+    border: none;
     vertical-align: top;
-    height: 5em;
+}
+
+#formButton {
+    width: 125px;
+    height: 30px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 400;
+    color: #1c5f69;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #efefef;
+    border: none;
+}
+
+/*===== Style of fields with focus =====*/
+input:focus,
+textarea:focus,
+#formButton:focus {
+    outline: none;
+    box-shadow: 0 0 10px #1c5f69;
+    /*box-shadow: 0 0 10px #b2d4da;*/
+}
+
+
+/*===== Style of error messages =====*/
+.errorMessage {
+    margin: 5px 0;
+    font-family: 'Nunito Sans', Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #691c39;
+}
+
+.error {
+    border: 1px solid #691c39;
 }

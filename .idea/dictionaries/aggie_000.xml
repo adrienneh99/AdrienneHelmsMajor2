@@ -3,6 +3,9 @@
     <words>
       <w>describedby</w>
       <w>inputanderror</w>
+      <w>nodemailer</w>
+      <w>sanitization</w>
+      <w>sendmail</w>
     </words>
   </dictionary>
 </component>

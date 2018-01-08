@@ -148,6 +148,8 @@ document.addEventListener('blur', function(event) {
 
 
 document.addEventListener('submit', function(event) {
+    event.preventDefault();
+
     // Get all of the form elements
     var fields = event.target.elements;
 
@@ -167,10 +169,28 @@ document.addEventListener('submit', function(event) {
 
     // If there are errors, don't submit form and focus on first element with error
     if (hasErrors) {
-        event.preventDefault();
+
         hasErrors.focus();
     }
-    // Otherwise, let the form submit normally
+    else {
+        // Send the input data to the contactRouter
+        $.post('contact', {
+            name: $('#formName').val(),
+            email: $('#formEmail').val(),
+            message: $('#formMessage').val()
+        }, function(data){
+            console.log(JSON.stringify(data))
+        }).fail(function (error){
+            console.log('error ' +JSON.stringify(error));
+        }
+
+        );
+
+
+
+
+    }
+
 
 }, false);
 

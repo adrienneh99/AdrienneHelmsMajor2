@@ -11,7 +11,7 @@ var messageField = document.getElementById("formMessage");
 
 form.setAttribute('novalidate', true);
 
-// Function to validate each field property
+// Validate each field property
 var hasError = function(field) {
 
     // Don't validate submits & buttons
@@ -64,7 +64,7 @@ var hasError = function(field) {
 };
 
 
-// Function to show an error message
+// Show an error message
 var showError = function (field, error) {
 
     // Add an error class to the field with the error
@@ -100,7 +100,7 @@ var showError = function (field, error) {
 };
 
 
-// Function to remove error message once field is validated
+// Remove error message once field is validated
 var removeError = function(field) {
 
     // Remove error class to field
@@ -129,6 +129,7 @@ var removeError = function(field) {
     message.style.visibility = 'hidden';
 };
 
+
 // Listen to & capture all blur events
 document.addEventListener('blur', function(event) {
 
@@ -146,8 +147,15 @@ document.addEventListener('blur', function(event) {
 
 }, true);
 
-
+/*
+ * On submit:
+ * 1. Validate all fields
+ * 2. Display error messages & focus on invalid fields
+ * 3. If no errors exist, post the data to the server for validation & sanitization
+ * 4. If the post was successful, display a status message to the user & clear all fields
+*/
 document.addEventListener('submit', function(event) {
+
     event.preventDefault();
 
     // Get all of the form elements
@@ -167,31 +175,26 @@ document.addEventListener('submit', function(event) {
         }
     }
 
-    // If there are errors, don't submit form and focus on first element with error
+    // If there are errors, don't submit form & focus on first element with error
     if (hasErrors) {
-
         hasErrors.focus();
     }
     else {
-        // Send the input data to the contactRouter
+        // Send the input data to the contactRouter via a JSON object
         $.post('contact', {
             name: $('#formName').val(),
             email: $('#formEmail').val(),
             message: $('#formMessage').val()
-        }, function(data){
-            console.log(JSON.stringify(data))
-        }).fail(function (error){
-            console.log('error ' +JSON.stringify(error));
         }
-
-        );
-
-
-
-
+        // Execute this function when the post request succeeds
+        , function(textStatus){
+            $('#submitStatusMessage').empty().append(textStatus);
+            $('#formName').val('');
+            $('#formEmail').val('');
+            $('#formMessage').val('');
+            $('#formButton').blur();
+        });
     }
-
-
 }, false);
 
 

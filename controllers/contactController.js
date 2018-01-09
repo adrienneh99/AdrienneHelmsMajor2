@@ -3,8 +3,7 @@
  *
  * 1. Validates & sanitizes the URL encoded info (eg, form data) via express-validator
  * 2. Sends the valid form data as an email via Mailgun & Nodemailer
- * 3. Responds to the user to indicate success (eg, pop-up 'Thx for your message')
- * 4. Redirects the user to the home page
+ * 3. Send a response to the user to indicate whether the message was sent successfully or not
  *
  */
 
@@ -14,143 +13,82 @@ var nodemailer = require('nodemailer');
 
 
 // Import the express-validator functions needed
-const { check, body,validationResult } = require('express-validator/check');
+const { check,body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 
 
-// Handle contact create on POST
+// Environment variables to hold Mailgun credentials
+var recipientUsername = process.env.MAILUSER || 'need username';
+var recipientPassword = process.env.MAILPASSWORD || 'need password';
+var recipientEmail = process.env.EMAIL || 'need email';
+
+
+// Contact form POST request handler method
 exports.contact_post = [
-
-
-
-
-
-    // Validate fields & return a Validation Chain
-    // body('name')
-    //     .isEmpty().trim().withMessage('Name cannot be empty.')
-    //     .isAlphanumeric().withMessage('Name has non-alphanumeric characters.'),
-    // body('email')
-    //     .isEmpty().trim().withMessage('Email cannot be empty.')
-    //     .isEmail().withMessage('Must be an email').trim().normalizeEmail(),
-    // body('message')
-    //     .isEmpty().trim().withMessage('Message cannot be empty.')
-    //     .isLength({min: 15}).trim().withMessage('Message must be at least 15 chars long.'),
 
     // Sanitize fields & return a Sanitization Chain
     sanitizeBody('name').trim().escape(),
     sanitizeBody('email').trim().escape(),
     sanitizeBody('message').trim().escape(),
 
-    // Process request after validation & sanitization
+    // Process POST request after sanitization
     function(req, res, next) {
 
-        req.checkBody('name', 'Name cannot be empty.')
-            .isEmpty().trim().withMessage('Name cannot be empty.')
-            .isAlphanumeric().withMessage('Name has non-alphanumeric characters.'),
-        req.checkBody('email')
-            .isEmpty().trim().withMessage('Email cannot be empty.')
-            .isEmail().withMessage('Must be an email').trim().normalizeEmail(),
-        req.checkBody('message')
-            .isEmpty().trim().withMessage('Message cannot be empty.')
-            .isLength({min: 15}).trim().withMessage('Message must be at least 15 chars long.'),
+        // Validate fields & return a Validation Chain
+        req.checkBody('name', 'Name cannot be empty.').notEmpty();
+        req.checkBody('email', 'Email cannot be empty.').notEmpty();
+        req.checkBody('email', 'Must be an email').isEmail();
+        req.checkBody('message', 'Message cannot be empty.').notEmpty();
+        req.checkBody('message', 'Message must be at least 15 chars long.').isLength({min: 15});
 
-        console.log('am i getting here');
-        console.log('req.body: ' + JSON.stringify(req.body));
-        console.log('req.checkBody: ' + JSON.stringify(req.checkBody('/name')));
-
+        // Function to send email via Nodemailer & Mailgun
         var sendMail = function() {
+
+            var senderName = req.body.name;
+            var senderEmail = req.body.email;
+            var senderMessage = req.body.message;
 
             // Create a transporter object
             var transporter = nodemailer.createTransport({
                 service: 'Mailgun',
                 auth: {
-                    user: '[sandbox postmaster address]',
-                    pass: '[sandbox domain password]'
+                    user: recipientUsername,
+                    pass: recipientPassword
                 }
             });
 
             // Create a message object
             var message = {
-                from: email,
-                to: 'adriennehelmsmajor@gmail.com',
-                subject: 'Web Form Email - From ' + name,
-                text: message
+                from: senderEmail,
+                to: recipientEmail,
+                subject: 'Web Form Email - From ' + senderName,
+                text: senderMessage
             };
 
-            // Create a sendmail transport
-            transporter.sendMail(message, function(error, info){
+            // Send mail via the transporter object
+            transporter.sendMail(message, function(error){
+                // If Nodemailer failed to send the message, return HTTP 400 & an error message
                 if(error) {
-                    console.log(error);
+                    return res.status(400).send("Message could not be sent. Please try again later.");
                 }
+                // If Nodemailer sent the message successfully, return HTTP 200 & a success message
                 else {
-                    console.log(info)
+                    return res.status(200).send("Message sent! Can't wait to connect!");
                 }
             })
         };
 
-        // Extract the validation errors & return a validation result object (ie, errors)
-        // const errors = validationResult(req);
+        // Extract validation errors from the request
+        var errors = req.validationErrors();
 
-
-
-        // req.getValidationResult().then(result => result.throw()).then(() => {
-        //     res.send(sendMail());
-        // }, e => {
-        //     res.status(400).json(e.array());
-        // });
-
-        req.getValidationResult().then(function (result) {
-            return result.throw();
-        }).then(function () {
-            res.send(sendMail());
-        }, function (e) {
-            res.status(400).json(e.array());
-        });
-
-
-
-
-        var name = req.body.name;
-        var email = req.body.email;
-        var message = req.body.message;
-
-        console.log('name: '+name);
-        console.log('email: '+email);
-        console.log('message: '+message);
-        // console.log('error: '+JSON.stringify(errors));
-        // console.log(e.isEmpty());
-
-        // The validation result object contains errors
-        // if (!errors.isEmpty()) {
-        //     // return res.status(400).send('Invalid syntax');
-        //     return res.status(400).json({errors: errors.mapped()});
-        // }
-        // else {
-        //
-        //     var transporter = nodemailer.createTransport({
-        //         service: 'Mailgun',
-        //         auth: {
-        //             user: 'postmaster@sandboxa4425c90fc0b4a0ab5c3899fd12b9c45.mailgun.org',
-        //             pass: '13c7d0aef4ec686328bd6236f1d90199'
-        //         }
-        //     });
-        //
-        //     var message = {
-        //         from: email,
-        //         to: 'adriennehelmsmajor@gmail.com',
-        //         subject: 'Web Form Email - From ' + name,
-        //         text: message
-        //     };
-        //
-        //     transporter.sendMail(message, function(error, info){
-        //         if(error) {
-        //             console.log(error);
-        //         }
-        //         else {
-        //
-        //         }
-        //     })
-        // }
+        // If validation errors exist, return HTTP 400
+        if (errors) {
+            return res.status(400).json({errors: errors});
+        }
+        // If no validation errors exist, send the contact form message
+        else {
+            sendMail()
+        }
     }
 ];
 

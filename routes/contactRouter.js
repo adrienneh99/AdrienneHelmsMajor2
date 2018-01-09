@@ -15,7 +15,7 @@ var router = express.Router();
 var contactController = require('../controllers/contactController');
 
 
-// POST request for sending contact form
+// Contact form POST route
 router.post('/', contactController.contact_post);
 
 

@@ -1,15 +1,19 @@
 /*
- * Constraint Validation
- * Reference 1: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation
- * Reference 2: https://css-tricks.com/form-validation-part-2-constraint-validation-api-javascript/
+ * Client Side Validation for Contact Form
+ *
+ * Constraint Validation Ref 1: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation
+ * Constraint Validation Ref 2: https://css-tricks.com/form-validation-part-2-constraint-validation-api-javascript/
  *
  */
+
 
 
 var form = document.getElementById("contactForm");
 var messageField = document.getElementById("formMessage");
 
 form.setAttribute('novalidate', true);
+
+// form.setAttribute("novalidate", "");
 
 // Validate each field property
 var hasError = function(field) {
@@ -196,11 +200,3 @@ document.addEventListener('submit', function(event) {
         });
     }
 }, false);
-
-
-
-
-
-
-
-

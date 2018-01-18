@@ -13,8 +13,6 @@ var messageField = document.getElementById("formMessage");
 
 form.setAttribute('novalidate', true);
 
-// form.setAttribute("novalidate", "");
-
 // Validate each field property
 var hasError = function(field) {
 

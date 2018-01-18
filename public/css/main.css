@@ -18,18 +18,16 @@ body {
     color: #1c5f69;
 }
 
-
-
 /*
  *Home: Hello & Welcome, My Apps, Testimonials, What I'm Looking For
  *Portfolio: Fitness Zone, Pingora Intranet, Travel Manager
  *Resume: Technical Skills, Relevant Courses, Education...
  */
 h2 {
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 20px;
     font-size: 30px;
-    font-weight: 900;
+    font-weight: 600;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -39,10 +37,9 @@ h2 {
  *Fun Facts: All Section Headers
  */
 h3 {
-    margin-top: 50px;
     margin-bottom: 20px;
     font-size: 25px;
-    font-weight: 900;
+    font-weight: 600;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -53,9 +50,8 @@ h3 {
  *Resume: Programming Languages...Regis University...2013-2016
  */
 h4 {
-    margin-bottom: 20px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -66,11 +62,16 @@ hr {
     height: 1px;
     margin: 0 auto;
     border: 0;
-    background-color: #efefef;
+    background-color: #88aeb4;
     /*background: linear-gradient(to left, #b2d4da, #1c5f69, #b2d4da);*/
+}
 
-    /*height: 50px;*/
-    /*background-color: #1c5f69;*/
+.smDivider {
+    width: 580px;
+    height: 1px;
+    margin: 40px auto;
+    border: 0;
+    background-color: #efefef;
 }
 
 /*==================== HEADER ====================*/
@@ -93,7 +94,7 @@ hr {
     margin-left: 50px;
     display: flex;
     justify-content: space-around;  /*horizontal alignment*/
-    align-items: center;
+    align-items: center;  /*vertical alignment*/
 }
 
 #headerName {
@@ -136,15 +137,22 @@ hr {
 footer {
     height: 100px;
     background-color: #1c5f69;
-    text-align-all: center;
     display: flex;
-    justify-content: center;  /*horizontal alignment*/
-    align-items: center;  /*vertical alignment*/
+    flex-direction: column;
+    justify-content: space-evenly;  /*vertical alignment*/
+    align-items: center;  /*horizontal alignment*/
+}
+
+footer > span {
+    font-size: 10px;
+    color: #ffffff;
+    opacity: 0.5;
 }
 
 footer a {
     padding-right: 15px;
     padding-left: 15px;
+    color: #ffffff;
     opacity: 0.5;
 }
 
@@ -188,13 +196,13 @@ footer a:hover {
 #name {
     margin-bottom: 15px;
     font-size: 20px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 #jobTitle {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 40px;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -222,28 +230,32 @@ footer a:hover {
 }
 
 #helloAndWelcomeText {
-    margin-bottom: 20px;
     text-align: justify;
-    /*line-height: 1.8;*/
+    line-height: 1.8;
 }
 
-#moreAboutMeButton {
-    width: 300px;
-    height: 40px;
+#testimonials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;  /*horizontal alignment*/
+    align-items: flex-start;  /*vertical alignment*/
+}
+
+.testimonialText {
+    width: 390px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.testimonialAuthor {
     margin-bottom: 50px;
-    background-color: #efefef;
-    border: none;
-    font-size: 13px;
-    font-weight: 600;
-    color: #1c5f69;
-    text-transform: uppercase;
+    font-size: 12px;
+    color: #a0a09f;
+    text-align: justify;
     letter-spacing: 1px;
-}
-
-#moreAboutMeButton:hover {
-    background-color: #1c5f69;
-    color: #ffffff;
-    transition-duration: 0.5s;
+    line-height: 1.8;
 }
 
 #myApps {
@@ -260,6 +272,7 @@ footer a:hover {
     align-items: center;  /*vertical alignment*/
 }
 
+#myAppsPersonalWebsite,
 #myAppsFitnessZone,
 #myAppsPingoraIntranet,
 #myAppsTravelManager {
@@ -268,53 +281,43 @@ footer a:hover {
 }
 
 .appBox {
-    width: 250px;
+    box-sizing: border-box;
+    width: 200px;
     height: 150px;
-    background-color: #efefef;
+    margin: 0 5px;
+    padding: 10px;
+    border: 2px solid #efefef;
+    border-radius: 20px 0;
+    /*background-color: #efefef;*/
     display: flex;
     flex-direction: column;
-    justify-content: center;  /*vertical alignment*/
+    justify-content: space-evenly;  /*vertical alignment*/
     align-items: center;  /*horizontal alignment*/
 }
 
 .appName {
-    margin-bottom: 15px;
-    font-weight: 800;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.viewProject {
+    padding: 10px;
+    background-color: #efefef;
+    border: none;
+    font-size: 10px;
+    font-weight: 600;
+    color: #1c5f69;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-radius: 20px 0;
 }
 
-.appType {
-    margin-bottom: 25px;
-}
-
-.appBox > a {
-    font-size: 13px;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-#testimonials {
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /*vertical alignment*/
-    align-items: center;  /*horizontal alignment*/
-}
-
-.testimonial {
-    text-align: center;
-    /*line-height: 1.8;*/
-}
-
-.testimonialAuthor {
-    font-size: 13px;
-    color: #a0a09f;
-    text-align: center;
-    letter-spacing: 1px;
-    /*line-height: 1.8;*/
+.viewProject:hover {
+    background-color: #1c5f69;
+    color: #ffffff;
+    transition-duration: 0.5s;
 }
 
 #whatImLookingFor {
@@ -329,21 +332,20 @@ footer a:hover {
 
 #companyQualities {
     text-align: center;
-    /*line-height: 1.8;*/
+    line-height: 1.8;
 }
 
 #whatImLookingFor > h4 {
     margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 600;
     text-transform: none;
-    /*font-variant: small-caps;*/
 }
 
 /*White container box on Fun Facts, Portfolio, Resume & Contact pages*/
 .containerBox {
     width: 740px;
     height: 240px;
-    /*width: 600px;*/
-    /*height: 200px;*/
     margin-top: 100px;
     background-color: #ffffff;
     display: flex;
@@ -354,11 +356,15 @@ footer a:hover {
 
 /*Quote on Fun Facts, Portfolio, Resume & Contact pages*/
 .quote {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
     text-align: center;
     letter-spacing: 1px;
-    /*line-height: 1.8;*/
+}
+
+.quoteMovie {
+    font-size: 15px;
+    font-weight: 300;
 }
 
 /*==================== ABOUT ====================*/
@@ -375,47 +381,31 @@ footer a:hover {
     align-items: flex-start;  /*vertical alignment*/
 }
 
-#myCloseFriends,
-#currentlyWatching,
-#bestAdvice,
-#dreamJob,
-#aFewOtherThings,
-#enfj {
+#dreamJobSection,
+#currentlyWatchingSection,
+#bestAdviceSection,
+#cantLiveWithoutSection,
+#enfjSection {
     margin-right: 50px;
-    margin-bottom: 50px;
     margin-left: 50px;
+    text-align: center;
 }
 
-#myCloseFriendsGroup {
+#dreamJobSection {
+    margin-top: 40px;
+}
+
+#dreamJobGroup {
     display: flex;
     flex-direction: row;
     justify-content: center;  /*horizontal alignment*/
     align-items: center;  /*vertical alignment*/
 }
 
-#myCloseFriendsGroup > img {
+#dreamJobGroup > img {
     width: 140px;
     height: 150px;
     margin-right: 20px;
-}
-
-#myCloseFriendsList {
-    text-align: center;
-    /*line-height: 1.8;*/
-    list-style-type: none;
-}
-
-#currentlyWatching > div,
-#bestAdvice > div,
-#dreamJob > div {
-    text-align: center;
-    /*line-height: 1.8;*/
-}
-
-#cantLiveWithout {
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
 }
 
 #cantLiveWithoutGroup {
@@ -445,25 +435,21 @@ footer a:hover {
     height: 300px;
 }
 
-#aFewOtherThings > ul {
-    text-align: center;
-    /*line-height: 1.8;*/
-    list-style-type: none;
-}
-
-#enfj > div {
-    text-align: center;
-    /*line-height: 1.8;*/
+#enfjSection {
+    margin-bottom: 50px;
 }
 
 #enfjButton {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
     background-color: #ffffff;
     border: none;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 400;
     color: #1c5f69;
     letter-spacing: 1px;
-    /*line-height: 1.8;*/
 }
 
 #enfjButton:hover {
@@ -488,6 +474,7 @@ footer a:hover {
     align-items: flex-start;  /*vertical alignment*/
 }
 
+#personalWebsite,
 #fitnessZone,
 #pingoraIntranet,
 #travelManager {
@@ -496,20 +483,54 @@ footer a:hover {
     margin-left: 50px;
 }
 
+/*App Name*/
+#personalWebsite h2,
+#fitnessZone h2,
+#pingoraIntranet h2,
+#travelManager h2 {
+    margin-bottom: 0;
+}
 
+/*App Text & Slider*/
+#personalWebsiteGroup,
 #fitnessZoneGroup,
 #pingoraIntranetGroup,
 #travelManagerGroup {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;  /*horizontal alignment*/
-    align-items: center;  /*vertical alignment*/
+    justify-content: space-evenly;  /*horizontal alignment*/
+    align-items: flex-start;  /*vertical alignment*/
+}
+
+.appDescription {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.notableLabel,
+.toolsLabel {
+    margin-bottom: 10px;
+}
+
+.notable {
+    margin-bottom: 20px;
+}
+
+.tools {
+    margin-bottom: 20px;
+    columns: 3;
+}
+
+.notable > ul,
+.tools > ul {
+    padding-left: 10px;
+    list-style: inside;
 }
 
 #fitnessZoneSlider {
-    width: 250px;
-    height: 450px;
+    width: 200px;
+    height: 400px;
     margin-right: 30px;
     margin-bottom: 0;
     border-width: 0;
@@ -517,27 +538,13 @@ footer a:hover {
 }
 
 #fitnessZoneSlider > .slides img {
-    width: 250px;
-    height: 450px;
-}
-
-#keyAchievements {
-    margin-bottom: 20px;
-    padding-left: 40px;
-}
-
-#keyAchievements > li {
-    margin-bottom: 10px;
-    /*line-height: 1.8;*/
-}
-
-#keyAchievements > li:last-child {
-    margin-bottom: 0;
+    width: 200px;
+    height: 400px;
 }
 
 #pingoraIntranetSlider {
-    width: 350px;
-    height: 450px;
+    width: 250px;
+    height: 350px;
     margin-right: 30px;
     margin-bottom: 0;
     border-width: 0;
@@ -545,34 +552,8 @@ footer a:hover {
 }
 
 #pingoraIntranetSlider > .slides img {
-    width: 350px;
-    height: 450px;
-}
-
-.appDescription {
-    margin-bottom: 20px;
-    text-align: justify;
-    /*line-height: 1.8;*/
-}
-
-#fitnessZoneText > .appDescription {
-    margin-bottom: 10px;
-}
-
-.toolsUsed {
-    margin-bottom: 20px;
-}
-
-.toolsUsed > ul {
-    margin-top: 10px;
-    padding-left: 40px;
-    /*line-height: 1.8;*/
-    list-style: none;
-    columns: 3;
-}
-
-.projectGithubLink {
-    /*line-height: 1.8;*/
+    width: 250px;
+    height: 350px;
 }
 
 
@@ -604,6 +585,7 @@ footer a:hover {
     margin-bottom: 50px;
     background-color: #efefef;
     border: none;
+    border-radius: 20px 0;
     font-size: 13px;
     font-weight: 600;
     color: #1c5f69;
@@ -635,12 +617,13 @@ footer a:hover {
     margin-bottom: 0;
 }
 
+/*Programming Languages...Version Control*/
 .technicalSkillsContainer > h4 {
     width: 440px;
     margin-right: 25px;
     margin-bottom: 0;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     text-align: end;
     display: flex;
     justify-content: flex-end;  /*horizontal alignment*/
@@ -648,7 +631,6 @@ footer a:hover {
 
 .technicalSkillsContainer > div {
     width: 415px;
-    /*line-height: 1.8;*/
 }
 
 #relevantCourses {
@@ -659,7 +641,6 @@ footer a:hover {
 
 #relevantCourses > ul {
     text-align: center;
-    /*line-height: 1.8;*/
     list-style: none;
     columns: 2;
 }
@@ -672,7 +653,6 @@ footer a:hover {
 
 #educationGroup {
     text-align: center;
-    /*line-height: 1.8;*/
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;  /*horizontal alignment*/
@@ -680,13 +660,13 @@ footer a:hover {
 }
 
 .school {
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .degree {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 #workExperience {
@@ -698,7 +678,6 @@ footer a:hover {
 #workExperienceIntro {
     margin-bottom: 30px;
     text-align: center;
-    /*line-height: 1.8;*/
 }
 
 #workExperienceTimeline {
@@ -717,8 +696,8 @@ footer a:hover {
     height: 80px;
     margin-right: 30px;
     margin-bottom: 0;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     text-align: right;
 }
 
@@ -744,7 +723,7 @@ footer a:hover {
 }
 
 .workExperienceText {
-    width: 385px;
+    width: 420px;
     height: 80px;
     display: flex;
     flex-direction: column;
@@ -753,13 +732,13 @@ footer a:hover {
 }
 
 .company {
-    font-size: 15px;
-    /*font-weight: 600;*/
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .role {
-    font-size: 15px;
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
 #lastHeader,
@@ -795,8 +774,7 @@ footer a:hover {
     text-transform: none;
 }
 
-
-/*===== Style of initial form =====*/
+/*Style of initial form*/
 
 #contactForm {
     width: 500px;
@@ -829,12 +807,13 @@ input {
     height: 30px;
     box-sizing: border-box;
     padding: 5px 10px;
-    font-family: 'Nunito Sans', Verdana, sans-serif;
-    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
     font-weight: 400;
     color: #1c5f69;
     background-color: #efefef;
     border: none;
+    border-radius: 20px 0;
 }
 
 textarea {
@@ -842,12 +821,13 @@ textarea {
     height: 150px;
     box-sizing: border-box;
     padding: 5px 10px;
-    font-family: 'Nunito Sans', Verdana, sans-serif;
-    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
     font-weight: 400;
     color: #1c5f69;
     background-color: #efefef;
     border: none;
+    border-radius: 20px 0;
     vertical-align: top;
 }
 
@@ -864,6 +844,7 @@ textarea {
     letter-spacing: 1px;
     background-color: #efefef;
     border: none;
+    border-radius: 20px 0;
 }
 
 #submitStatusMessage {
@@ -871,9 +852,9 @@ textarea {
     height: 30px;
     box-sizing: border-box;
     margin-top: 15px;
-    font-family: 'Nunito Sans', Verdana, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -883,19 +864,18 @@ textarea:focus,
 #formButton:focus {
     outline: none;
     box-shadow: 0 0 10px #1c5f69;
-    /*box-shadow: 0 0 10px #b2d4da;*/
 }
 
 
 /*===== Style of error messages =====*/
 .errorMessage {
     margin: 5px 0;
-    font-family: 'Nunito Sans', Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     font-weight: 400;
     color: #691c39;
 }
 
 .error {
-    border: 1px solid #691c39;
+    box-shadow: 0 0 10px #691c39;
 }

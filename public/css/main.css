@@ -474,6 +474,10 @@ footer a:hover {
     align-items: flex-start;  /*vertical alignment*/
 }
 
+#personalWebsiteAnchor {
+    background-color: #ffffff;
+}
+
 #personalWebsite,
 #fitnessZone,
 #pingoraIntranet,

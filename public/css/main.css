@@ -63,7 +63,6 @@ hr {
     margin: 0 auto;
     border: 0;
     background-color: #88aeb4;
-    /*background: linear-gradient(to left, #b2d4da, #1c5f69, #b2d4da);*/
 }
 
 .smDivider {
@@ -183,10 +182,12 @@ footer a:hover {
 
 /*White container box on Home page*/
 #containerBoxHome {
-    width: 740px;
-    height: 240px;
+    width: 610px;
+    height: 150px;
+    padding: 40px;
     margin-top: 100px;
     background-color: #ffffff;
+    border-radius: 50px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;  /*vertical alignment*/
@@ -287,8 +288,7 @@ footer a:hover {
     margin: 0 5px;
     padding: 10px;
     border: 2px solid #efefef;
-    border-radius: 20px 0;
-    /*background-color: #efefef;*/
+    border-radius: 50px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;  /*vertical alignment*/
@@ -318,6 +318,11 @@ footer a:hover {
     background-color: #1c5f69;
     color: #ffffff;
     transition-duration: 0.5s;
+    box-shadow: 0 0 15px #1c5f69;
+}
+
+.viewProject:focus {
+    outline: 0 none #ffffff;
 }
 
 #whatImLookingFor {
@@ -344,10 +349,12 @@ footer a:hover {
 
 /*White container box on Fun Facts, Portfolio, Resume & Contact pages*/
 .containerBox {
-    width: 740px;
-    height: 240px;
+    width: 490px;
+    height: 130px;
+    padding: 40px;
     margin-top: 100px;
     background-color: #ffffff;
+    border-radius: 50px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;  /*vertical alignment*/
@@ -418,7 +425,6 @@ footer a:hover {
 #cantLiveWithoutGroup > ul {
     margin-right: 20px;
     text-align: center;
-    /*line-height: 1.8;*/
     list-style-type: none;
 }
 
@@ -440,12 +446,10 @@ footer a:hover {
 }
 
 #enfjButton {
-    margin-right: 10px;
-    margin-left: 10px;
     padding: 10px;
     background-color: #ffffff;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px 0;
     font-size: 15px;
     font-weight: 400;
     color: #1c5f69;
@@ -457,6 +461,11 @@ footer a:hover {
     border: none;
     color: #ffffff;
     transition-duration: 0.5s;
+    box-shadow: 0 0 15px #1c5f69;
+}
+
+#enfjButton:focus {
+    outline: 0 none #ffffff;
 }
 
 
@@ -532,6 +541,14 @@ footer a:hover {
     list-style: inside;
 }
 
+.projectGithubLink img {
+    border-radius: 50%;
+}
+
+.projectGithubLink img:hover {
+    box-shadow: 0 0 40px #1c5f69;
+}
+
 #fitnessZoneSlider {
     width: 200px;
     height: 400px;
@@ -601,6 +618,11 @@ footer a:hover {
     background-color: #1c5f69;
     color: #ffffff;
     transition-duration: 0.5s;
+    box-shadow: 0 0 15px #1c5f69;
+}
+
+#downloadResumeButton:focus {
+    outline: 0 none #ffffff;
 }
 
 #technicalSkills {

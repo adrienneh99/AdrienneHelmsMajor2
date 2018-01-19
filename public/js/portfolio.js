@@ -1,10 +1,10 @@
-
 // Function to display anchors correctly
 $(function () {
     if (window.location.href.indexOf('#') != -1) {
         window.scrollBy(0, -100);
     }
 });
+
 
 // FlexSlider for Fitness Zone & Pingora Intranet
 $(function () {

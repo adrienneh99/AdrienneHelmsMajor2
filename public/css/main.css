@@ -168,7 +168,7 @@ footer a:hover {
 
 /*==================== HOME ====================*/
 #homeAuPic {
-    height: 700px;
+    min-height: 700px;
     background-color: #1c5f69;
     background-image: url(../img/au_01_home.jpg);
     background-repeat: no-repeat;
@@ -212,7 +212,7 @@ footer a:hover {
     font-size: 15px;
     letter-spacing: 1px;
     display: flex;
-    align-items: center;
+    align-items: center;  /*vertical alignment*/
 }
 
 .highlight {
@@ -388,7 +388,7 @@ footer a:hover {
     align-items: flex-start;  /*vertical alignment*/
 }
 
-#dreamJobSection,
+#americanIdolSection,
 #currentlyWatchingSection,
 #bestAdviceSection,
 #cantLiveWithoutSection,
@@ -398,18 +398,18 @@ footer a:hover {
     text-align: center;
 }
 
-#dreamJobSection {
+#americanIdolSection {
     margin-top: 40px;
 }
 
-#dreamJobGroup {
+#americanIdolGroup {
     display: flex;
     flex-direction: row;
     justify-content: center;  /*horizontal alignment*/
     align-items: center;  /*vertical alignment*/
 }
 
-#dreamJobGroup > img {
+#americanIdolGroup > img {
     width: 140px;
     height: 150px;
     margin-right: 20px;
